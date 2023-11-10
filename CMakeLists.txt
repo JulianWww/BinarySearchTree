@@ -14,5 +14,5 @@ set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
 include(CPack)
 
-add_executable(test_suit ${TEST})
-target_link_libraries(test_suit binary-search-tree)
+add_executable(test_suit_bst ${TEST})
+target_link_libraries(test_suit_bst binary-search-tree)
