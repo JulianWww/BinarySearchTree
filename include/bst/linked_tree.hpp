@@ -57,7 +57,7 @@ inline T* BST::LinkedTree<T>::get(const char* idx_arr, const size_t idx_size) {
 }
 
 template<typename T>
-inline T* BST::LinkedTree<T>::getAndRelease(const char* idx, const size_t idx_size) {
+inline T* BST::LinkedTree<T>::getAndRelease(const char* idx_arr, const size_t idx_size) {
     return this->follow_node_to_end(idx_arr, idx_size)->data.release();
 }
 
