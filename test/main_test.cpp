@@ -4,5 +4,7 @@
 
 int main(){
     test_linked_tree();
+    test_linked_tree_released();
+    
     return summarize_tests();
 }

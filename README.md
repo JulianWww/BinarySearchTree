@@ -13,3 +13,9 @@ Every tree has an ```insert```, ```get``` and ```remove```. What they do is fair
 
 ### Linked Tree
 The linked tree stores the data in a linked tree
+
+### Linked Tree Released
+The same as the linked tree but it does not delete object upon deletion.
+
+## Todo
+[ ] Make the released tree not be a copy of the linked tree with a couple of modifications
