@@ -8,7 +8,7 @@ FILE(GLOB_RECURSE source src/*)
 file(GLOB_RECURSE TEST "test/*.cpp")
 
 add_library(binary-search-tree INTERFACE)
-target_include_directories(binary-search-tree INTERFACE ${CMAKE_SOURCE_DIR}/include)
+target_include_directories(binary-search-tree INTERFACE "./include")
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
