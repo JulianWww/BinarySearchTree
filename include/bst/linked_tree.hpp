@@ -21,7 +21,8 @@ namespace BST {
         private: Node root;
 
         // Inserts `data` into the tree at the index idx
-        public: void insert(const char* idx, const size_t idx_size, const T data);
+        public: void insert(const char* idx, const size_t idx_size, T data);
+        public: void insert(const char* idx, const size_t idx_size, T* data);
         // gets the data at a current tree idx
         public: T* get(const char* idx, const size_t idx_size);
         // remove removed the data at the current location
@@ -39,8 +40,13 @@ namespace BST {
 }
 
 template<typename T>
-inline void BST::LinkedTree<T>::insert(const char* idx_arr, const size_t idx_size, const T data) {
-    this->follow_node_to_end(idx_arr, idx_size)->data.reset(new T(data));
+inline void BST::LinkedTree<T>::insert(const char* idx_arr, const size_t idx_size, T data) {
+    this->insert(idx_arr, idx_size, new T(data));
+}
+
+template<typename T>
+inline void BST::LinkedTree<T>::insert(const char* idx_arr, const size_t idx_size, T* data) {
+    this->follow_node_to_end(idx_arr, idx_size)->data.reset(data);
 }
 
 template<typename T>
