@@ -25,6 +25,8 @@ namespace BST {
         public: void insert(const char* idx, const size_t idx_size, T* data);
         // gets the data at a current tree idx
         public: T* get(const char* idx, const size_t idx_size);
+        // gets the data at a current tree idx and releases it from deletion handler
+        public: T* getAndRelease(const char* idx, const size_t idx_size);
         // remove removed the data at the current location
         public: void remove(const char* idx, const size_t idx_size);
 
@@ -52,6 +54,11 @@ inline void BST::LinkedTree<T>::insert(const char* idx_arr, const size_t idx_siz
 template<typename T>
 inline T* BST::LinkedTree<T>::get(const char* idx_arr, const size_t idx_size) {
     return this->follow_node_to_end(idx_arr, idx_size)->data.get();
+}
+
+template<typename T>
+inline T* BST::LinkedTree<T>::getAndRelease(const char* idx, const size_t idx_size) {
+    return this->follow_node_to_end(idx_arr, idx_size)->data.release();
 }
 
 template<typename T>
